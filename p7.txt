@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+	long long  n, x, count = 0, m = 30;
+	cin >> n;
+	while (true)
+	{
+		x = pow(2, m);
+		if (x <= n)
+		{
+			n -= x;
+			count++;
+		}
+		if (n == 0)
+			break;
+		m--;
+	}
+	cout << count;
+	//system("pause");
+}
