@@ -1,0 +1,58 @@
+#include<iostream>
+#include<algorithm>
+#include<bitset>
+#include<iomanip>
+#include<queue>
+#include<string>
+
+using namespace std;
+
+int main()
+{
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(NULL);
+    cout.tie(NULL);
+	int test;
+	int m = 0, a = 0, r = 0, g = 0, ii = 0, t = 0, counter = 0;
+	string s;
+	cin >> test;
+	while (test--) {
+		cin >> s;
+		counter = 0;
+		m=0;a=0;r=0;g=0;ii=0;t=0;
+		for (int i = 0; i < s.size(); i++) {
+			if (s[i] == 'M') {
+				m++;
+			}
+			else if (s[i] == 'A') {
+				a++;
+			}
+			else if (s[i] == 'R') {
+				r++;
+			}
+			else if (s[i] == 'G') {
+				g++;
+			}
+			else if (s[i] == 'I') {
+				ii++;
+			}
+			else if (s[i] == 'T') {
+				t++;
+			}
+		}
+		int x = s.size();
+		while (x--) {
+			if (m >= 1 && a >= 3 && r >= 2 && g >= 1 && ii >= 1 && t >= 1) {
+				counter++;
+				m -= 1;
+				a -= 3;
+				r -= 2;
+				g -= 1;
+				ii -= 1;
+				t -= 1;
+			}
+		}
+		cout << counter <<endl;
+	}
+	//system("pause");
+}
