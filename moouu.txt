@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	std::ios_base::sync_with_stdio(0);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	int n, a[60][60], mo = INT_MIN;
+	bool x = false;
+	cin >> n;
+	for (int i = 0; i < n; i++){
+		for (int j = 0; j < n; j++)
+			cin >> a[i][j];
+	}
+
+	for (int i = 0; i < n; i++){
+		mo = INT_MIN;
+		for (int j = 0; j < n; j++){
+			if (mo < a[i][j])
+				mo = a[i][j];
+		}
+		if (mo == n - 1 && x == false){
+			cout << mo + 1 << " ";
+			x = true;
+		}
+		else cout << mo << " ";
+	}
+	cout << "\n";
+	//system("pause");
+}
